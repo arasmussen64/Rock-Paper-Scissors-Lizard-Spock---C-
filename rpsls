@@ -1,7 +1,36 @@
+/*This is a version of rock, paper scissors.
+It adds lizard and spock for additional complexity.
+Lizard poisions spock, paper disproves spock, spock
+lasers rock and spock crushes scissors.*/
 
+#include <iostream>
+#include <stdlib.h>
 
 int main() {
+  srand (time(NULL));
 
+  int computer = rand() % 3 + 1;
 
-    return 0;
+  int user = 0;
+
+  std::cout << "====================\n";
+  std::cout << "rock paper scissors!\n";
+  std::cout << "====================\n";
+  
+  std::cout << "1) ✊\n";
+  std::cout << "2) ✋\n";
+  std::cout << "3) ✌️\n";
+  
+  std::cout << "shoot!\n";
+  std::cin >> user;
+
+  if (user == 1 && computer == 1 || user == 2 && computer == 2 || user == 3 && computer == 3) {
+    std::cout << "Tie!\n";
+  }
+  else if (user == 1 && computer == 2 || user == 2 && computer == 3 || user == 3 && computer == 1) {
+    std::cout << "Computer wins!\n";
+  }
+  else if (user == 1 && computer == 3 || user == 2 && computer == 1 || user == 3 && computer == 2) {
+    std::cout << "User wins!\n";
+  }
 }
